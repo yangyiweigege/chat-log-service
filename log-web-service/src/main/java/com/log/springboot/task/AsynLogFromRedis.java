@@ -49,6 +49,10 @@ public class AsynLogFromRedis {
 		logger.info("当前时间:" + df.format(new Date()) + "..开始执行日志同步任务......");
 		long startTime = System.currentTimeMillis();
 		Jedis jedis = jedisPool.getResource();
+		if (jedis.llen("chat-web-log") < 500) { // 日志数量如果小于五百条 不做处理
+			logger.info("chat-web-log这个key中...日志数量不足五百条...结束同步");
+			return;
+		}
 		List<String> logLists = jedis.lrange("chat-web-log", 0, 499);// 截取最前面的99条日志
 		jedis.ltrim("chat-web-log", 500, -1);// 只保留99条记录之后的数据
 		List<JSONObject> dealList = new ArrayList<JSONObject>();

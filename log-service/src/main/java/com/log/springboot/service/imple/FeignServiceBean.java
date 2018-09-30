@@ -9,11 +9,12 @@ import com.log.springboot.service.FeignService;
 public class FeignServiceBean implements FeignService{
 
 	@Override
-	public JSONObject getHi(String name) {
+	public JSONObject findUserList(Integer pageSize) {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("code", 500);
 		jsonObject.put("message", "服务暂时无法接通");
 		return jsonObject;
 	}
 
+	
 }
