@@ -1,10 +1,10 @@
+#配置注册中心
 eureka:
  client:
    serviceUrl:
     defaultZone: http://192.168.31.71:8761/eureka/
-feign:
-  hystrix: #开启熔断机制 防止雪崩
-    enabled: true  
+ instance: #使用真实ip进行注册
+    prefer-ip-address: true
 spring:
   #配置服务追踪
   #zipkin:
@@ -12,9 +12,20 @@ spring:
   application:
     name: chat-log-service
   cloud:
+    #bus:
+     # trace:
+     #   enabled: true
     config:
       label: master
       profile: dev
       discovery:
         enabled: true
         service-id: config-server
+  #rabbitmq:
+    #host: 192.168.31.69
+   # port: 5672
+    #username: username
+   # password: password
+management:
+  security:
+    enabled: false
