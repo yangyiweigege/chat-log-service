@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/config")
-@RefreshScope
+@RefreshScope//强制刷新
 public class ConfigController {
 	
 	@Value("${server.port}")
