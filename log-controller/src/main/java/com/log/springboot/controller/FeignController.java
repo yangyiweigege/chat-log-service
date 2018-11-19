@@ -30,9 +30,10 @@ public class FeignController {
 		return feignService.sendGetRequest(id);
 	}
 
-	@RequestMapping(value = "/post", method = { RequestMethod.POST })
+	@RequestMapping(value = "/post", method = { RequestMethod.POST, RequestMethod.GET })
 	public JSONObject sendPostRequest(String id) {
-		return feignService.sendPostRequest(id);
+		JSONObject result =  feignService.sendPostRequest(id);
+		return result;
 	}
 
 	@RequestMapping(value = "/json", method = { RequestMethod.POST })

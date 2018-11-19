@@ -53,7 +53,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
 		</dependency>
-		<!-- 监控熔断情况 -->
+		<!--监控熔断情况 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
-		</dependency>
+		</dependency> 
 		<!-- 配置断路器 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
